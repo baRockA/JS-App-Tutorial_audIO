@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aud-i-o</title>
+
+    <!-- CDN for jQuery Mobile: change to local lib inf built with Capacitor-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="css/default.css">
+</head>
+
+<body>
+    <!--build two pages with transition in jquery mobile (board and recorder)-->
+    <div data-role="page" id="board">
+        <div data-role="header">
+            <h1>audIO - Board</h1>
+            <a class="ui-shadow ui-btn ui-corner-all ui-icon-comment ui-btn-icon-notext ui-btn-inline ui-btn-right" href="#recorder"></a>
+        </div>
+        <div role="main" class="ui-content" id="board-content">
+            <section id="sound-buttons">
+                <button id="btn-clip-1">1</button>
+            </section>
+        </div>
+    </div>
+    <div data-role="page" id="recorder">
+        <div data-role="header">
+            <a class="ui-shadow ui-btn ui-corner-all ui-icon-grid ui-btn-icon-notext ui-btn-inline" href="#board"></a>
+            <h1>audIO - Recorder</h1>
+        </div>
+        <div role="main" class="ui-content" id="recorder-content">
+            <section>
+                <input type="text" id="name" placeholder="Soundclip Name">
+                <div class="buttons ui-grid-a ui-responsive" id="main-controls">
+                    <button id="record" class="ui-block-a">Rec</button>
+                    <button id="stop" class="ui-block-b">Stop</button>
+                </div>
+            </section>
+            <section>
+                <ol id="sound-clips">
+                    <li class="clip" id="clip-1">
+                        <audio controls src="media/clip1.oga"></audio>
+                        <label>1: Clip-Name</label>
+                        <a>Delete</a>
+                    </li>
+                </ol>
+            </section>
+        </div>
+    </div>
+
+    <!-- insert JavaScript at the end to make sure everything is loaded before script is executed-->
+    <script src="js/app.js "></script>
+</body>
+
+</html>
